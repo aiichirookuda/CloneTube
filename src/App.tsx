@@ -1,8 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import { Search } from './components/pages/Search';
-import { Top } from './components/pages/Top';
-import { Watch } from './components/pages/Watch';
+import { Search } from './pages/Search';
+import { Top } from './pages/Top';
+import { Watch } from './pages/Watch';
 
 function App() {
   return (
