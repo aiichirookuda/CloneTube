@@ -24,7 +24,7 @@ export const Top: VFC = () => {
             <VideoGridItem
               key={popular.id}
               id={popular.id}
-              src={popular.snippet.thumbnails.high.url}
+              src={popular.snippet.thumbnails.medium.url}
               title={popular.snippet.title}
             />
           );
