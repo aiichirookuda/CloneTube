@@ -1,11 +1,11 @@
-import React, { VFC, useEffect, useContext } from 'react';
+import React, { VFC, useEffect, useContext, memo } from 'react';
 import { Layout } from '../components/Layout/Layout';
-import { fetchPopularData } from '../apis/index';
+import { fetchPopularData } from '../apis/api';
 import { Store } from '../store/index';
 import { VideoGrid } from '../components/VideoGrid/VideoGrid';
 import { VideoGridItem } from '../components/VideoGridItem/VideoGridItem';
 
-export const Top: VFC = () => {
+export const Top: VFC = memo(() => {
   const { globalState, setGlobalState } = useContext(Store);
   useEffect(() => {
     fetchPopularData().then((res) => {
@@ -32,4 +32,4 @@ export const Top: VFC = () => {
       </VideoGrid>
     </Layout>
   );
-};
+});

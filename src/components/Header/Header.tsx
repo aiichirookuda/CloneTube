@@ -1,4 +1,4 @@
-import React, { VFC, useState, useEffect, useContext } from 'react';
+import React, { VFC, useState, useEffect, useContext, memo } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
@@ -6,7 +6,7 @@ import Style from './Header.module.scss';
 import { useHistory } from 'react-router-dom';
 import { Store } from '../../store/index';
 
-export const Header: VFC = () => {
+export const Header: VFC = memo(() => {
   const [text, setText] = useState('');
   const history = useHistory();
   const { globalState, setGlobalState } = useContext(Store);
@@ -17,7 +17,7 @@ export const Header: VFC = () => {
   };
   useEffect(() => {
     setText(globalState.text);
-  }, []);
+  }, [globalState.text]);
   return (
     <div className={Style.header}>
       <div className={Style.item}>
@@ -33,11 +33,11 @@ export const Header: VFC = () => {
             onChange={(e) => setText(e.target.value)}
             value={text}
           />
-          <button type="submit">
+          <button type="submit" disabled={text === '' ? true : false}>
             <FontAwesomeIcon icon={faSearch} />
           </button>
         </form>
       </div>
     </div>
   );
-};
+});

@@ -1,9 +1,9 @@
-import React, { useContext, VFC } from 'react';
+import React, { memo, useContext, VFC } from 'react';
 import { Store } from '../../store/index';
 import { SideListItem } from '../SideListItem/SideListItem';
 import Style from './SideList.module.scss';
 
-export const SideList: VFC = () => {
+export const SideList: VFC = memo(() => {
   const { globalState } = useContext(Store);
 
   return (
@@ -26,4 +26,4 @@ export const SideList: VFC = () => {
       )}
     </div>
   );
-};
+});

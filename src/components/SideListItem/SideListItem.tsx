@@ -1,4 +1,4 @@
-import React, { VFC } from 'react';
+import React, { memo, VFC } from 'react';
 import { Link } from 'react-router-dom';
 import Style from './SideListItem.module.scss';
 
@@ -8,7 +8,7 @@ type Props = {
   title: string;
 };
 
-export const SideListItem: VFC<Props> = ({ id, src, title }) => {
+export const SideListItem: VFC<Props> = memo(({ id, src, title }) => {
   return (
     <Link className={Style.item} to={{ pathname: 'watch', search: `?v=${id}` }}>
       <img src={src} alt={title} />
@@ -17,4 +17,4 @@ export const SideListItem: VFC<Props> = ({ id, src, title }) => {
       </div>
     </Link>
   );
-};
+});

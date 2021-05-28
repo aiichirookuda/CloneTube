@@ -15,10 +15,22 @@ const initialState = {
   searched: [],
   selected: {},
   text: '',
+  categories: [],
+  categoryVideos: [],
+  selectedCategoryId: '',
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
+    case 'SET_SELECTED_CATEGORY_ID':
+      return {
+        ...state,
+        selectedCategoryId: action.payload.selectedCategoryId,
+      };
+    case 'SET_CATEGORY_VIDEOS':
+      return { ...state, categoryVideos: action.payload.categoryVideos };
+    case 'SET_CATEGORIES':
+      return { ...state, categories: action.payload.categories };
     case 'SET_POPULAR':
       return { ...state, popular: action.payload.popular };
     case 'SET_RELATED':

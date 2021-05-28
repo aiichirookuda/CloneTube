@@ -1,10 +1,10 @@
-import React, { useContext, VFC } from 'react';
+import React, { memo, useContext, VFC } from 'react';
 import { Store } from '../../store/index';
 import { VideoPlay } from '../VideoPlay/VideoPlay';
 import Style from './VideoDetail.module.scss';
 import Linkify from 'react-linkify';
 
-export const VideoDetail: VFC = () => {
+export const VideoDetail: VFC = memo(() => {
   const { globalState } = useContext(Store);
 
   return globalState.selected && globalState.selected.id ? (
@@ -19,4 +19,4 @@ export const VideoDetail: VFC = () => {
   ) : (
     <span>No Data</span>
   );
-};
+});

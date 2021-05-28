@@ -14,6 +14,24 @@ const params = {
   type: 'video',
 };
 
+export const fetchCategoryVideos = async (id) => {
+  return await youtube.get('/videos', {
+    params: {
+      ...params,
+      chart: 'mostPopular',
+      videoCategoryId: id,
+    },
+  });
+};
+
+export const fetchCategories = async () => {
+  return await youtube.get('/videoCategories', {
+    params: {
+      ...params,
+    },
+  });
+};
+
 export const fetchPopularData = async () => {
   return await youtube.get('/videos', {
     params: {

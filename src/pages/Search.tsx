@@ -1,18 +1,17 @@
-import React, { useContext, useEffect, VFC } from 'react';
+import React, { memo, useContext, useEffect, VFC } from 'react';
 import { Layout } from '../components/Layout/Layout';
 import { useLocation } from 'react-router-dom';
-import { fetchSearchData } from '../apis';
+import { fetchSearchData } from '../apis/api';
 import { Store } from '../store/index';
 import { VideoGrid } from '../components/VideoGrid/VideoGrid';
 import { VideoGridItem } from '../components/VideoGridItem/VideoGridItem';
 
-export const Search: VFC = () => {
+export const Search: VFC = memo(() => {
   const { globalState, setGlobalState } = useContext(Store);
   const location = useLocation();
   const setSearchResult = async () => {
     const searchPrams = new URLSearchParams(location.search);
     const query = searchPrams.get('query');
-    console.log(query);
     if (query) {
       await fetchSearchData(query).then((res) => {
         setGlobalState({
@@ -22,9 +21,13 @@ export const Search: VFC = () => {
       });
     }
   };
-  useEffect(() => {
-    setSearchResult();
-  }, [location.search]);
+  useEffect(
+    () => {
+      setSearchResult();
+    },
+    // eslint-disable-next-line
+    [location.search]
+  );
   return (
     <Layout>
       <VideoGrid>
@@ -32,9 +35,9 @@ export const Search: VFC = () => {
           globalState.searched.map((searched) => {
             return (
               <VideoGridItem
-                key={searched.id}
-                id={searched.id}
-                src={searched.snippet.thumbnails.high.url}
+                key={searched.id.videoId}
+                id={searched.id.videoId}
+                src={searched.snippet.thumbnails.medium.url}
                 title={searched.snippet.title}
               />
             );
@@ -45,4 +48,4 @@ export const Search: VFC = () => {
       </VideoGrid>
     </Layout>
   );
-};
+});

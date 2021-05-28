@@ -1,12 +1,12 @@
-import React, { VFC, useEffect, useContext } from 'react';
+import React, { VFC, useEffect, useContext, memo } from 'react';
 import { Layout } from '../components/Layout/Layout';
 import { SideList } from '../components/SideList/SideList';
 import { VideoDetail } from '../components/VideoDetail/VideoDetail';
 import { Store } from '../store/index';
 import { useLocation } from 'react-router-dom';
-import { fetchSelectedData, fetchRelatedData } from '../apis/index';
+import { fetchSelectedData, fetchRelatedData } from '../apis/api';
 
-export const Watch: VFC = () => {
+export const Watch: VFC = memo(() => {
   const { setGlobalState } = useContext(Store);
   const location = useLocation();
   const setVideos = async () => {
@@ -27,13 +27,17 @@ export const Watch: VFC = () => {
       });
     }
   };
-  useEffect(() => {
-    setVideos();
-  }, [location.search]);
+  useEffect(
+    () => {
+      setVideos();
+    },
+    // eslint-disable-next-line
+    [location.search]
+  );
   return (
     <Layout>
       <VideoDetail />
       <SideList />
     </Layout>
   );
-};
+});

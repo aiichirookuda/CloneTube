@@ -1,4 +1,4 @@
-import React, { VFC } from 'react';
+import React, { memo, VFC } from 'react';
 import Style from './VideoGridItem.module.scss';
 import { Link } from 'react-router-dom';
 
@@ -8,7 +8,7 @@ type Props = {
   title: string;
 };
 
-export const VideoGridItem: VFC<Props> = ({ id, src, title }) => {
+export const VideoGridItem: VFC<Props> = memo(({ id, src, title }) => {
   return (
     <Link to={{ pathname: 'watch', search: `?v=${id}` }} className={Style.item}>
       <div>
@@ -17,4 +17,4 @@ export const VideoGridItem: VFC<Props> = ({ id, src, title }) => {
       </div>
     </Link>
   );
-};
+});
