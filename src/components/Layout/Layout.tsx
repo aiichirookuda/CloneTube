@@ -1,5 +1,6 @@
 import React, { memo, ReactNode, VFC } from 'react';
 import { CategoryButtons } from '../CategoryButtons/CategoryButtons';
+import { Footer } from '../Footer/Footer';
 import { Header } from '../Header/Header';
 import Style from './Layout.module.scss';
 
@@ -14,6 +15,7 @@ export const Layout: VFC<Props> = memo((props) => {
       <Header />
       <CategoryButtons />
       <div className={Style.main}>{children}</div>
+      <Footer />
     </div>
   );
 });
