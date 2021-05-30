@@ -4,6 +4,7 @@ import 'normalize.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { StoreProvider } from './store';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
