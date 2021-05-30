@@ -1,0 +1,15 @@
+.footer {
+  display: flex;
+  height: 56px;
+  width: 100%;
+  background-color: #202020;
+  font-size: small;
+  span {
+    color: gray;
+    padding-left: 1rem;
+    line-height: 56px;
+    a {
+      color: gray;
+    }
+  }
+}
