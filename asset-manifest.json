@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/CloneTube/static/css/main.623d8b86.chunk.css",
+    "main.css": "/CloneTube/static/css/main.13b0da85.chunk.css",
     "main.js": "/CloneTube/static/js/main.1030c049.chunk.js",
     "main.js.map": "/CloneTube/static/js/main.1030c049.chunk.js.map",
     "runtime-main.js": "/CloneTube/static/js/runtime-main.af6cf264.js",
@@ -12,14 +12,14 @@
     "static/js/3.e693250f.chunk.js.map": "/CloneTube/static/js/3.e693250f.chunk.js.map",
     "index.html": "/CloneTube/index.html",
     "static/css/2.679831fc.chunk.css.map": "/CloneTube/static/css/2.679831fc.chunk.css.map",
-    "static/css/main.623d8b86.chunk.css.map": "/CloneTube/static/css/main.623d8b86.chunk.css.map",
+    "static/css/main.13b0da85.chunk.css.map": "/CloneTube/static/css/main.13b0da85.chunk.css.map",
     "static/js/2.027dca4a.chunk.js.LICENSE.txt": "/CloneTube/static/js/2.027dca4a.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.af6cf264.js",
     "static/css/2.679831fc.chunk.css",
     "static/js/2.027dca4a.chunk.js",
-    "static/css/main.623d8b86.chunk.css",
+    "static/css/main.13b0da85.chunk.css",
     "static/js/main.1030c049.chunk.js"
   ]
 }
