@@ -22,8 +22,13 @@ export const Header: VFC = memo(() => {
     <div className={Style.header}>
       <div className={Style.item}>
         <Link to="/">
-          <FontAwesomeIcon className={Style.faPlayCircle} icon={faPlayCircle} />
-          <span>CloneTube</span>
+          <span>
+            <FontAwesomeIcon
+              className={Style.faPlayCircle}
+              icon={faPlayCircle}
+            />
+            CloneTube
+          </span>
         </Link>
       </div>
       <div className={Style.item}>
